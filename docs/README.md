@@ -5,7 +5,7 @@
 [![Build Status](https://github.com/kitpymes/template-netcore-repositories/workflows/Kitpymes.Core.Repositories/badge.svg)](https://github.com/kitpymes/template-netcore-repositories/actions)
 [![NuGet Status](https://img.shields.io/nuget/v/Kitpymes.Core.Repositories)](https://www.nuget.org/packages/Kitpymes.Core.Repositories/)
 [![NuGet Download](https://img.shields.io/nuget/dt/Kitpymes.Core.Repositories)](https://www.nuget.org/stats/packages/Kitpymes.Core.Repositories?groupby=Version)
-[![License](https://img.shields.io/github/license/kitpymes/template-netcore-repositories)](https://github.com/kitpymes/template-netcore-repositories/blob/master/docs/LICENSE.txt)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/kitpymes/template-netcore-repositories/blob/master/docs/LICENSE.txt)
 [![Size Repo](https://img.shields.io/github/repo-size/kitpymes/template-netcore-repositories)](https://github.com/kitpymes/template-netcore-repositories/)
 [![Last Commit](https://img.shields.io/github/last-commit/kitpymes/template-netcore-repositories)](https://github.com/kitpymes/template-netcore-repositories/)
 
