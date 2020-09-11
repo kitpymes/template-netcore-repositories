@@ -80,16 +80,18 @@ namespace Kitpymes.Core.Repositories
         /// <summary>
         /// Obtener una lista de objetos paginada.
         /// </summary>
-        /// <param name="parameters">Configuración de los parámetros.</param>
+        /// <param name="property">Propiedad a ordenar.</param>
+        /// <param name="options">Configuración de la paginación y ordenamiento.</param>
         /// <returns>IEnumerable{T}: lista de objetos.</returns>
-        IEnumerable<T> GetPaged(Action<(string? property, bool? ascending, int? index, int? size)> parameters);
+        IEnumerable<T> GetPaged(string property, Action<PagedOptions> options);
 
         /// <summary>
         /// Obtener una lista de objetos paginada.
         /// </summary>
-        /// <param name="parameters">Configuración de los parámetros.</param>
+        /// <param name="property">Propiedad a ordenar.</param>
+        /// <param name="options">Configuración de la paginación y ordenamiento.</param>
         /// <returns>Task{IEnumerable{T}}: lista de objetos.</returns>
-        Task<IEnumerable<T>> GetPagedAsync(Action<(string? property, bool? ascending, int? index, int? size)> parameters);
+        Task<IEnumerable<T>> GetPagedAsync(string property, Action<PagedOptions> options);
 
         #endregion GetPaged
 

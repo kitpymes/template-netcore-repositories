@@ -130,24 +130,28 @@ namespace Kitpymes.Core.Repositories
         /// <summary>
         /// Obtener una lista de objetos paginada.
         /// </summary>
-        /// <param name="parameters">Configuración de los parámetros.</param>
+        /// <param name="property">Propiedad a ordenar.</param>
+        /// <param name="options">Configuración de la paginación y ordenamiento.</param>
         /// <param name="where">Condición que se debe cumplir para poder obtenerla.</param>
         /// <param name="includes">Si se incluye objetos con claves foraneas.</param>
         /// <returns>IEnumerable{T}: lista de objetos.</returns>
         IEnumerable<T> GetPaged(
-            Action<(string? property, bool? ascending, int? index, int? size)> parameters,
+            string property,
+            Action<PagedOptions>? options = null,
             Expression<Func<T, bool>>? where = null,
             params Expression<Func<T, object>>[] includes);
 
         /// <summary>
         /// Obtener una lista de objetos paginada.
         /// </summary>
-        /// <param name="parameters">Configuración de los parámetros.</param>
+        /// <param name="property">Propiedad a ordenar.</param>
+        /// <param name="options">Configuración de la paginación y ordenamiento.</param>
         /// <param name="where">Condición que se debe cumplir para poder obtenerla.</param>
         /// <param name="includes">Si se incluye objetos con claves foraneas.</param>
         /// <returns>Task{IEnumerable{T}}: lista de objetos.</returns>
         Task<IEnumerable<T>> GetPagedAsync(
-            Action<(string? property, bool? ascending, int? index, int? size)> parameters,
+            string property,
+            Action<PagedOptions>? options = null,
             Expression<Func<T, bool>>? where = null,
             params Expression<Func<T, object>>[] includes);
 
@@ -155,14 +159,16 @@ namespace Kitpymes.Core.Repositories
         /// Obtiene una lista de objetos de tipo <c>TResult</c>.
         /// </summary>
         /// <typeparam name="TResult">Tipo de objeto a devolver.</typeparam>
+        /// <param name="property">Propiedad a ordenar.</param>
         /// <param name="select">Selección de los campos necesarios a devolver.</param>
-        /// <param name="parameters">Configuración de los parámetros.</param>
+        /// <param name="options">Configuración de la paginación y ordenamiento.</param>
         /// <param name="where">Condición que se debe cumplir para poder obtenerla.</param>
         /// <param name="includes">Si se incluye objetos con claves foraneas.</param>
         /// <returns>IEnumerable{TResult}: lista de objetos.</returns>
         public IEnumerable<TResult> GetPaged<TResult>(
+           string property,
            Expression<Func<T, TResult>> select,
-           Action<(string? property, bool? ascending, int? index, int? size)> parameters,
+           Action<PagedOptions>? options = null,
            Expression<Func<T, bool>>? where = null,
            params Expression<Func<T, object>>[] includes);
 
@@ -170,14 +176,16 @@ namespace Kitpymes.Core.Repositories
         /// Obtiene una lista de objetos de tipo <c>TResult</c>.
         /// </summary>
         /// <typeparam name="TResult">Tipo de objeto a devolver.</typeparam>
+        /// <param name="property">Propiedad a ordenar.</param>
         /// <param name="select">Selección de los campos necesarios a devolver.</param>
-        /// <param name="parameters">Configuración de los parámetros.</param>
+        /// <param name="options">Configuración de la paginación y ordenamiento.</param>
         /// <param name="where">Condición que se debe cumplir para poder obtenerla.</param>
         /// <param name="includes">Si se incluye objetos con claves foraneas.</param>
         /// <returns>Task{IEnumerable{TResult}}: lista de objetos.</returns>
         public Task<IEnumerable<TResult>> GetPagedAsync<TResult>(
+           string property,
            Expression<Func<T, TResult>> select,
-           Action<(string? property, bool? ascending, int? index, int? size)> parameters,
+           Action<PagedOptions>? options = null,
            Expression<Func<T, bool>>? where = null,
            params Expression<Func<T, object>>[] includes);
 
